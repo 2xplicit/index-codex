@@ -486,12 +486,13 @@
 
     /* Page Transition */
     .page-container {
+        position: absolute;
+        width: 100%;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .page-hidden {
         opacity: 0;
-        transform: translateY(10px);
         pointer-events: none;
     }
 </style>
@@ -508,7 +509,7 @@
     <div class="fixed top-6 right-6 z-50 fade-in-up">
         <button id="themeToggle" class="theme-toggle glass rounded-full p-3 hover:scale-110" aria-label="Toggle dark mode">
             <svg id="sunIcon" class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464a1 1 0 101.414-1.414l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 11a1 1 0 100 2H4a1 1 0 100-2h1z" fill-rule="evenodd"></path>
+                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414z[...]
             </svg>
             <svg id="moonIcon" class="w-5 h-5 text-indigo-400 hidden" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
@@ -517,7 +518,7 @@
     </div>
 
     <!-- Main Container -->
-    <div class="w-full max-w-md z-10">
+    <div class="w-full max-w-md z-10 relative">
         <!-- Logo Section (Always visible) -->
         <div class="text-center mb-8 fade-in-up">
             <div class="inline-flex items-center justify-center w-20 h-20 rounded-3xl bg-gradient-to-br from-[#2563EB] to-[#7C3AED] mb-4 logo-animated shadow-2xl shadow-blue-500/30">
@@ -564,10 +565,10 @@
                             <button type="button" id="togglePassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition">
                                 <svg id="eyeOpen" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.47 0-8.268-2.943-9.542-7z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.5[...]
                                 </svg>
                                 <svg id="eyeClosed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-[...]
                                 </svg>
                             </button>
                         </div>
@@ -613,12 +614,12 @@
                     <button 
                         type="submit" 
                         id="submitBtn"
-                        class="btn-ripple w-full py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all"
+                        class="btn-ripple w-full py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-[...]
                     >
                         <span id="btnText">Sign up</span>
                         <svg id="btnSpinner" class="animate-spin h-5 w-5 mx-auto hidden" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path[...]
                         </svg>
                     </button>
                 </form>
@@ -672,13 +673,13 @@
                                 required
                             >
                             <label for="loginPassword" class="input-label">Password</label>
-                            <button type="button" id="toggleLoginPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition">
+                            <button type="button" id="toggleLoginPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transitio[...]
                                 <svg id="loginEyeOpen" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.47 0-8.268-2.943-9.542-7z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.5[...]
                                 </svg>
                                 <svg id="loginEyeClosed" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-[...]
                                 </svg>
                             </button>
                         </div>
@@ -688,12 +689,12 @@
                     <button 
                         type="submit" 
                         id="loginSubmitBtn"
-                        class="btn-ripple w-full py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 transition-all mt-6"
+                        class="btn-ripple w-full py-3.5 rounded-xl bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-semibold shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-[...]
                     >
                         <span id="loginBtnText">Log in</span>
                         <svg id="loginBtnSpinner" class="animate-spin h-5 w-5 mx-auto hidden" fill="none" viewBox="0 0 24 24">
                             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path[...]
                         </svg>
                     </button>
                 </form>
@@ -715,7 +716,7 @@
     </div>
 
     <!-- Hidden preload for reference image if needed -->
-    <img id="refImg" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAAAAAAAAAAAA9tYAAQA[...]" style="display: none;">
+    <img id="refImg" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIbGNtcwIQAABtbnRyUkdCIFhZWiAH4gADABQACQAOAB1hY3NwTVNGVAAAAABzYXdzY3RybAAAAAAAAAAAAAAAAAAA9tYAAQA[...]
 </div>
 
 <script>
@@ -799,8 +800,8 @@
     const eyeClosed = document.getElementById('eyeClosed');
 
     // Validation Icons
-    const checkIcon = `<svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path></svg>`;
-    const xIcon = `<svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" fill-rule="evenodd"></path></svg>`;
+    const checkIcon = `<svg class="w-5 h-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.41[...]
+    const xIcon = `<svg class="w-5 h-5 text-red-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 [...]
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
@@ -998,112 +999,4 @@
 
     loginEmailInput.addEventListener('input', () => {
         const value = loginEmailInput.value.trim();
-        if (value === '') {
-            loginEmailIcon.classList.remove('show');
-            loginEmailInput.classList.remove('input-valid', 'input-invalid');
-            loginEmailError.classList.add('hidden');
-            return;
-        }
-        
-        if (emailRegex.test(value)) {
-            loginEmailIcon.innerHTML = checkIcon;
-            loginEmailIcon.classList.add('show');
-            loginEmailInput.classList.add('input-valid');
-            loginEmailInput.classList.remove('input-invalid');
-            loginEmailError.classList.add('hidden');
-        } else {
-            loginEmailIcon.innerHTML = xIcon;
-            loginEmailIcon.classList.add('show');
-            loginEmailInput.classList.add('input-invalid');
-            loginEmailInput.classList.remove('input-valid');
-            loginEmailError.textContent = 'Please enter a valid email address';
-            loginEmailError.classList.remove('hidden');
-        }
-    });
-
-    toggleLoginPassword.addEventListener('click', () => {
-        const type = loginPasswordInput.type === 'password' ? 'text' : 'password';
-        loginPasswordInput.type = type;
-        loginEyeOpen.classList.toggle('hidden');
-        loginEyeClosed.classList.toggle('hidden');
-    });
-
-    loginSubmitBtn.addEventListener('click', function(e) {
-        const button = e.currentTarget;
-        const ripple = document.createElement('span');
-        const rect = button.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = x + 'px';
-        ripple.style.top = y + 'px';
-        ripple.classList.add('ripple');
-        
-        button.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-    });
-
-    loginForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const emailValid = emailRegex.test(loginEmailInput.value.trim());
-        const passwordValid = loginPasswordInput.value.length > 0;
-        
-        if (!emailValid || !passwordValid) {
-            if (!loginEmailInput.value.trim()) {
-                loginEmailInput.classList.add('input-invalid');
-                loginEmailError.textContent = 'Email is required';
-                loginEmailError.classList.remove('hidden');
-            }
-            if (!passwordValid) {
-                loginPasswordInput.classList.add('input-invalid');
-            }
-            return;
-        }
-        
-        loginSubmitBtn.disabled = true;
-        loginBtnText.classList.add('hidden');
-        loginBtnSpinner.classList.remove('hidden');
-        
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        loginBtnSpinner.classList.add('hidden');
-        loginBtnText.textContent = 'Success! ✓';
-        loginBtnText.classList.remove('hidden');
-        loginSubmitBtn.classList.remove('from-[#2563EB]', 'to-[#7C3AED]');
-        loginSubmitBtn.classList.add('from-emerald-500', 'to-emerald-600');
-        
-        setTimeout(() => {
-            alert('Logged in successfully! Welcome back to Codex.');
-            resetLoginForm();
-        }, 1500);
-    });
-
-    function resetLoginForm() {
-        loginForm.reset();
-        loginEmailIcon.classList.remove('show');
-        loginEmailInput.classList.remove('input-valid', 'input-invalid');
-        loginPasswordInput.classList.remove('input-valid', 'input-invalid');
-        loginEmailError.classList.add('hidden');
-        
-        loginSubmitBtn.disabled = false;
-        loginBtnText.textContent = 'Log in';
-        loginSubmitBtn.classList.remove('from-emerald-500', 'to-emerald-600');
-        loginSubmitBtn.classList.add('from-[#2563EB]', 'to-[#7C3AED]');
-    }
-
-    // Smooth entrance for inputs on focus
-    document.querySelectorAll('.input-field').forEach(input => {
-        input.addEventListener('focus', () => {
-            input.parentElement.parentElement.style.transform = 'scale(1.01)';
-        });
-        input.addEventListener('blur', () => {
-            input.parentElement.parentElement.style.transform = 'scale(1)';
-        });
-    });
-</script>
-<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"playsignal",payload:{product_id:pid}}, "*")})})();</script>
-</body>
-</html>
+[...]
